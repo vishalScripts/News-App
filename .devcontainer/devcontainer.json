@@ -15,6 +15,7 @@
     // "postCreateCommand": "yarn install",
 
     // Configure tool-specific properties.
+    
     "customizations": {
         "vscode": {
             "extensions": [

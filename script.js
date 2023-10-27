@@ -4,9 +4,13 @@ const url = "https://newsapi.org/v2/everything?q=";
 window.addEventListener("load", () => fetchNews("india"));
 
 async function fetchNews(querry) {
-    const response = await fetch(`${url}${querry}&apiKey=${apiKey}`);
-    const data = await response.json();
-    bindData(data.articles);
+    try {
+        const response = await fetch(`${url}${querry}&apiKey=${apiKey}`);
+        const data = await response.json();
+        bindData(data.articles);
+    } catch (error) {
+        alert("search carefully")
+    }
 }
 
 function bindData(articles) {
