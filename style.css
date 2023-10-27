@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;200;300;400;500;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-text-color: #183b56;
+    --secondry-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+    --padding-inline-section: 20px;
+}
+body {
+    font-family: "Poopins", sans-serif;
+    color: var(--primary-text-color);
+}
+p {
+    font-family: "roboto", sans-serif;
+    color: var(--secondry-text-color);
+    line-height: 1.4rem;
+    text-overflow: ellipsis;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+.active {
+    color: var(--accent-color);
+}
+.dis-none {
+    display: none;
+}
+.container {
+    max-width: 1100px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+nav {
+    background-color: #f3faff;
+    box-shadow: 0 0 4px #bbd0e2;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+nav .main-nav {
+    justify-content: space-between;
+    padding: 8px 20px;
+}
+.company-logo:active {
+    scale: 1.2;
+}
+.company-logo img {
+    width: 40px;
+    mix-blend-mode: darken;
+}
+.nav-links ul {
+    gap: 16px;
+}
+
+.hover-link {
+    cursor: pointer;
+}
+.hover-link:hover {
+    color: var(--secondry-text-color);
+}
+.hover-link:active {
+    color: red;
+}
+
+.search-bar {
+    height: 32px;
+    gap: 8px;
+}
+.news-input {
+    width: 200px;
+    height: 100%;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 2px solid #bbd0e2;
+    outline: none;
+    font-family: "roboto", sans-serif;
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "roboto", sans-serif;
+}
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+    display: flex;
+    position: relative;
+}
+.cards-container {
+    /*justify-content: space-between;*/
+    align-items: start;
+    flex-wrap: wrap;
+}
+.card {
+    width: calc(32% - 10px);
+    /*min-height: 400px;*/
+    max-height: 400px;
+    /*height: 400px;*/
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    margin: 10px;
+}
+.card:hover {
+    box-shadow: 1px 1px 8px #d4ecff;
+    background-color: #f9fdff;
+    scale: 1.05;
+    position: relative;
+}
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.1s;
+}
+.card-header {
+    overflow: hidden;
+    /*position: relative;*/
+}
+.card:hover .card-header img {
+    scale: 1.2;
+}
+.card-content {
+    padding: 20px;
+    white-space: no-wrap;
+    overflow: hidden;
+}
+.news-source {
+    margin-block: 12px;
+}
+.news-source:hover {
+    color: var(--accent-color);
+}
+.news-source:active {
+    color: red;
+}
+#open-link {
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border: 50px;
+    top: 3px;
+    right: 3px;
+    z-index: 96;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+#open-link:hover {
+    background-color: #183b5654;
+}
+#open-link:hover #link-icon {
+    color: var(--accent-color);
+}
+#link-icon {
+    font-size: 15px;
+    color: var(--primary-text-color);
+    transition: all 0.3s ease-in-out;
+}
+.hamburger-container {
+    display: none;
+}
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    height: 25px;
+    width: 35px;
+    cursor: pointer;
+}
+.line {
+    width: 35px;
+    border-radius: 50px;
+    height: 5px;
+    transition: all 0.4s ease-in-out;
+    /*background-color: red;*/
+}
+.line.line-1 {
+    background-color: #1c274c;
+    position: absolute;
+    top: 0;
+    left: 0; /* To horizontally center the line */
+    transform: rotate(0deg);
+    z-index: 100;
+}
+.line.line-2 {
+    background-color: #8c92a4;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0; /* To horizontally center the line */
+    transform: translateY(-50%);
+    transition: all 1s ease-in-out;
+    z-index: 100;
+    /*display: none;*/
+}
+.line.line-3 {
+    background-color: #1c274c;
+    position: absolute;
+    bottom: 0;
+    left: 0; /* To horizontally center the line */
+    z-index: 100;
+    transform: rotate(-0deg);
+}
+
+.clicked-line-1 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: #1c274c;
+    transform: translateY(-50%) rotate(224deg);
+    z-index: 100;
+}
+.clicked-line-2 {
+    position: absolute;
+    background-color: #8c92a4;
+    top: 50%;
+    width: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-50%);
+    z-index: 100;
+    /*display: none;*/
+}
+.clicked-line-3 {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    background-color: #1c274c;
+    transform: translateY(50%) rotate(-223deg);
+    z-index: 200;
+}
+.default {
+    right: 0;
+}
+.state-btn {
+    /*background-color: var(--accent-color);*/
+    /*color: #fff;*/
+    border: 2px solid #d4ecff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "roboto", sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+.state-btn:hover {
+    background-color: #d4ecff;
+}
+.state-btn:active {
+    background-color: var(--secondry-text-color);
+}
+.state-content {
+    padding: 10px;
+    /*display: flex;
+    flex-direction: column;*/
+    background-color: #d4ecff;
+    /*box-shadow: 0 0 4px #bbd0e2;*/
+    position: absolute;
+    top: 60px;
+    transition: display 0.3s ease-in-out;
+}
+.state {
+    text-align: center;
+}
+.state:hover {
+    color: var(--accent-color-dark);
+    background-color: #1c274c6c;
+    font-weight: 700;
+    scale: 1.1;
+}
+.state:active {
+    color: red;
+    background-color: #1c274c6c;
+}
+.block {
+    display: block;
+}
+.deg {
+    transform: rotate(-90deg);
+    transition: all 0.3 ease-in-out;
+}
+.drop-down-icon {
+    transform: rotate(359deg);
+}
+/*! ===============||Customize scroll bar||=== */
+/*Customize the scrollbar track */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color); /* Color of the thumb */
+    border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+}
+
+/* Change the appearance on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color-dark);
+}
+
+/* You can also customize other states like 'active' and 'disabled'
+
+
+/*! ===============||Media Query||=== */
+@media screen and (max-width: 810px) {
+    .card {
+        margin: 5px;
+        width: calc(50% - 10px);
+    }
+}
+@media screen and (max-width: 580px) {
+    .card {
+        margin: 10px;
+        width: calc(100% - 10px);
+    }
+    .hamburger-container {
+        display: flex;
+    }
+    .nav-links {
+        transition: all 1s ease-in-out;
+        background-color: #f3faffb5;
+        box-shadow: 0 0 4px #bbd0e2;
+        position: absolute;
+        top: 0px;
+        right: -170px;
+        border-radius: 0 0 0 10px;
+    }
+    .nav-links ul {
+        color: var(--primary-text-color);
+        font-weight: 700;
+        margin-block-start: 60px;
+        padding: 10px 50px;
+        border-top: 1px solid #1c274c;
+        flex-direction: column;
+    }
+    .nav-links ul li:active {
+        background-color: var(--accent-color);
+    }
+    .news-input {
+        width: 50%;
+    }
+    .card:hover {
+        transform: translateY(10px);
+    }
+    /*.states-container {
+        display: block;
+    }*/
+}
+
+@media screen and (max-width: 760px) {
+    .states-container {
+        display: none;
+    }
+}
+
+/*! For element shake */
+.shake-element {
+    animation: shake 0.5s infinite;
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-3px);
+    }
+    40% {
+        transform: translateX(3px);
+    }
+    60% {
+        transform: translateX(-3px);
+    }
+    80% {
+        transform: translateX(3px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning-News</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="main-nav container flex">
+            <a href="#" class="company-logo" id="company-logo">
+                <img src="./images/NEWS.png" alt="Logo">
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-items" id="ipl">IPL</li>
+                    <li class="hover-link nav-items" id="finance">Finanace</li>
+                    <li class="hover-link nav-items" id="politics">Politics</li>      
+                    <li class="hover-link nav-items" id="science">Science</li>             
+                </ul>
+            </div>
+            <div class="states-container">
+                <div class="state-btn " id="state-btn">States <i class="fa-solid fa-caret-down deg" id="drop-down-icon"></i></div>
+                <ul class="flex state-content  dis-none" id="states-container">
+                    <!--States element          -->
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input type="text" class="news-input" id="news-input" placeholder="e.g. Science">
+                <button class="search-button" id="search-button">Search</button>
+            </div>
+            <div class="hamburger-container">
+                <div class="hamburger" id="hamburger">
+                    <div class="line line-1 "> <!-- line-1--> </div>
+                    <div class="line line-2"> <!-- line-2--> </div>
+                    <div class="line line-3 "> <!-- line-3--> </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+            
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+                <div class="card-header">
+                    <div id="open-link" class="flex"><i class="fa-solid fa-arrow-up-right-from-square " id="link-icon"></i></div>
+                    <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+                </div>
+                <div class="card-content">
+                    <h3 id="news-tittle">This is the tittle</h3>
+                    <h5 class="news-source" id="news-source">Lorem, ipsum. 20/20/2020</h5>
+                    <p class="news-desc" id="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum explicabo dicta non molestiae amet soluta modi atque qui corrupti ipsa.</p>
+                </div>
+            </div>
+    </template>
+    <script src="https://kit.fontawesome.com/c84f374fbb.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script> 
+</body>
+</html>
